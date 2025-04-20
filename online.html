@@ -26,9 +26,7 @@
             <a href="in-person.html" class="nav-link">التحفيظ في المركز</a>
             <a href="online.html" class="nav-link">التحفيظ أونلاين</a>
             <a href="noor-albayan.html" class="nav-link">نور البيان</a>
-            <a href="ijazat.html" class="nav-link">ختمات الإجازة</a>
-            <a href="competitions.html" class="nav-link">المسابقات</a>
-            <a href="courses.html" class="nav-link">الدورات </a>
+            <a href="ijazat.html" class="nav-link">ختمات الإجازة</a>  
             <a href="contact.html" class="nav-link">اتصل بنا</a>
           </div>
           
@@ -49,10 +47,8 @@
       <a href="online.html" class="mobile-link">التحفيظ أونلاين</a>
       <a href="noor-albayan.html" class="mobile-link">نور البيان</a>
       <a href="ijazat.html" class="mobile-link">ختمات الإجازة</a>
-      <a href="competitions.html" class="nav-link">المسابقات</a>
-      <a href="courses.html" class="mobile-link">الدورات</a>
       <a href="contact.html" class="mobile-link">اتصل بنا</a>
-    </div>
+        </div>
     
     <!-- قسم Hero -->
     <div id="hero" class="relative overflow-hidden py-16 md-py-24">
@@ -223,7 +219,7 @@
         <p class="text-center text-lg mb-8">يرجى ملء النموذج التالي للتسجيل في برنامج التحفيظ أونلاين</p>
         
         <div class="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-shatby-gold-30">
-          <form class="space-y-6" data-form-type="registration">
+          <form class="space-y-6" data-form-type="online-registration">
             <div class="grid md-grid-cols-2 gap-6">
               <div class="form-group">
                 <label for="fullName">الاسم الكامل</label>
@@ -257,6 +253,8 @@
                   id="phone"
                   name="phone"
                   class="form-input" 
+                  dir="rtl"
+                  style="text-align: right;"
                   placeholder="أدخل رقم الهاتف" 
                   required
                 >
@@ -279,13 +277,14 @@
               <select 
                 id="package"
                 name="package"
-                class="form-input"
+                class="form-input bg-transparent text-white"
                 required
+                style="background-color: #1A493D; option { background-color: #62745e; }"
               >
-                <option value="">اختر الباقة</option>
-                <option value="basic">الباقة الأساسية</option>
-                <option value="advanced">الباقة المتقدمة</option>
-                <option value="premium">الباقة المتميزة</option>
+                <option value="" style="background-color: #1A493D;">اختر الباقة</option>
+                <option value="basic" style="background-color: #1A493D;">الباقة الأساسية</option>
+                <option value="advanced" style="background-color: #1A493D;">الباقة المتقدمة</option>
+                <option value="premium" style="background-color: #1A493D;">الباقة المتميزة</option>
               </select>
             </div>
             
@@ -294,13 +293,14 @@
               <select 
                 id="preferredTime"
                 name="preferredTime"
-                class="form-input"
+                class="form-input bg-transparent text-white"
                 required
+                style="background-color: #1A493D; option { background-color: #62745e; }"
               >
-                <option value="">اختر الوقت المفضل</option>
-                <option value="morning">الفترة الصباحية (9 صباحاً - 12 ظهراً)</option>
-                <option value="afternoon">فترة الظهيرة (1 - 4 عصراً)</option>
-                <option value="evening">الفترة المسائية (5 - 9 مساءً)</option>
+                <option value="" style="background-color: #1A493D;">اختر الوقت المفضل</option>
+                <option value="morning" style="background-color: #1A493D;">الفترة الصباحية (9 صباحاً - 12 ظهراً)</option>
+                <option value="afternoon" style="background-color: #1A493D;">فترة الظهيرة (1 - 4 عصراً)</option>
+                <option value="evening" style="background-color: #1A493D;">الفترة المسائية (5 - 9 مساءً)</option>
               </select>
             </div>
             
@@ -315,55 +315,60 @@
               ></textarea>
             </div>
             
-            <div class="form-group">
+            <div>
               <button 
                 type="submit" 
                 class="button-primary w-full"
               >
                 إرسال الطلب
               </button>
-          
+            </div>
           </form>
         </div>
       </div>
     </section>
+    
+    <!-- تحديث السكريبت -->
     <script>
-      const form = document.querySelector('form');
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = {
-          fullName: formData.get('fullName'),
-          age: formData.get('age'),
-          phone: formData.get('phone'), 
-          email: formData.get('email'),
-          package: formData.get('package'),
-          preferredTime: formData.get('preferredTime'),
-          currentLevel: formData.get('currentLevel')
-        };
-
-        // Google Apps Script Web App URL - قم باستبدال هذا الرابط برابط نشر تطبيق الويب الخاص بك
-        // يجب أن يبدأ الرابط بـ https://script.google.com/macros/s/
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwFLO76LR2pahquSCdbLjDISq2bOtq_RoPMRGCy0UTLuR6wxKSWfvdIOxj04rTnojxcbA/exec';
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form[data-form-type="online-registration"]');
+      
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
           
-        fetch(scriptURL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        .then(() => {
-          alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
-          form.reset();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى');
+          const formData = new FormData(form);
+          const data = {
+            fullName: formData.get('fullName'),
+            age: formData.get('age'),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            package: formData.get('package'),
+            preferredTime: formData.get('preferredTime'),
+            currentLevel: formData.get('currentLevel')
+          };
+      
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbwFLO76LR2pahquSCdbLjDISq2bOtq_RoPMRGCy0UTLuR6wxKSWfvdIOxj04rTnojxcbA/exec';
+          
+          fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(() => {
+            alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
+            form.reset();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى');
+          });
         });
-      });
+      }
+    });
     </script>
     <!-- فوتر -
     <!-- فوتر -->

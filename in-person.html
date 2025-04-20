@@ -27,9 +27,7 @@
             <a href="in-person.html" class="nav-link">التحفيظ في المركز</a>
             <a href="online.html" class="nav-link">التحفيظ أونلاين</a>
             <a href="noor-albayan.html" class="nav-link">نور البيان</a>
-            <a href="ijazat.html" class="nav-link">ختمات الإجازة</a>
-            <a href="competitions.html" class="nav-link">المسابقات</a>
-            <a href="courses.html" class="nav-link">الدورات </a>
+            <a href="ijazat.html" class="nav-link">ختمات الإجازة</a>  
             <a href="contact.html" class="nav-link">اتصل بنا</a>
           </div>
           
@@ -50,10 +48,8 @@
       <a href="online.html" class="mobile-link">التحفيظ أونلاين</a>
       <a href="noor-albayan.html" class="mobile-link">نور البيان</a>
       <a href="ijazat.html" class="mobile-link">ختمات الإجازة</a>
-      <a href="competitions.html" class="nav-link">المسابقات</a>
-      <a href="courses.html" class="mobile-link">الدورات</a>
       <a href="contact.html" class="mobile-link">اتصل بنا</a>
-    </div>
+        </div>
     
     <!-- قسم Hero -->
     <div id="hero" class="relative overflow-hidden py-16 md-py-24">
@@ -207,6 +203,7 @@
                   id="phone"
                   name="phone"
                   class="form-input" 
+                  dir="rtl"
                   placeholder="أدخل رقم الهاتف" 
                   required
                 >
@@ -229,30 +226,20 @@
               <select 
                 id="period"
                 name="period"
-                class="form-input"
+                class="form-input bg-transparent text-white"
                 required
+                style="background-color: #1A493D; option { background-color: #62745e; }"
               >
-                <option value="">اختر الفترة</option>
-                <option value="morning">الفترة الصباحية</option>
-                <option value="evening">الفترة المسائية</option>
+                <option value="" style="background-color: #1A493D;">اختر الفترة</option>
+                <option value="morning" style="background-color: #1A493D;">الفترة الصباحية</option>
+                <option value="evening" style="background-color: #1A493D;">الفترة المسائية</option>
               </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="currentLevel">المستوى الحالي في الحفظ</label>
-              <textarea 
-                id="currentLevel"
-                name="currentLevel"
-                class="form-textarea" 
-                placeholder="اكتب المستوى الحالي (عدد الأجزاء المحفوظة، السور المحفوظة، إلخ)"
-                required
-              ></textarea>
             </div>
             
             <div>
               <button 
                 type="submit" 
-                class="button-primary"
+                class="button-primary w-full"
               >
                 إرسال الطلب
               </button>

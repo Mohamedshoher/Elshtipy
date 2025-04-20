@@ -29,9 +29,7 @@
             <a href="in-person.html" class="nav-link">التحفيظ في المركز</a>
             <a href="online.html" class="nav-link">التحفيظ أونلاين</a>
             <a href="noor-albayan.html" class="nav-link">نور البيان</a>
-            <a href="ijazat.html" class="nav-link">ختمات الإجازة</a>
-            <a href="competitions.html" class="nav-link">المسابقات</a>
-            <a href="courses.html" class="nav-link">الدورات </a>
+            <a href="ijazat.html" class="nav-link">ختمات الإجازة</a>  
             <a href="contact.html" class="nav-link">اتصل بنا</a>
           </div>
           
@@ -52,10 +50,8 @@
       <a href="online.html" class="mobile-link">التحفيظ أونلاين</a>
       <a href="noor-albayan.html" class="mobile-link">نور البيان</a>
       <a href="ijazat.html" class="mobile-link">ختمات الإجازة</a>
-      <a href="competitions.html" class="nav-link">المسابقات</a>
-      <a href="courses.html" class="mobile-link">الدورات</a>
       <a href="contact.html" class="mobile-link">اتصل بنا</a>
-    </div>
+        </div>
     
     <!-- قسم Hero -->
     <div id="hero" class="relative overflow-hidden py-16 md-py-24">
@@ -71,7 +67,7 @@
           
           <div class="hero-image">
             <div class="relative animate-float">
-              <img src="images/e5fe3d97-3f05-4039-88b6-48da3b08f061.png" alt="نور البيان" class="mx-auto max-w-full rounded-2xl object-fill">
+              <img src="images/طفل نور البيان.png" alt="نور البيان" class="mx-auto max-w-full rounded-2xl object-fill">
               <!-- زخارف -->
               <div class="star-decoration top-right">★</div>
               <div class="star-decoration bottom-left">★</div>
@@ -186,11 +182,11 @@
         <h2 class="heading-secondary text-center">التقديم الآن</h2>
         <p class="text-center text-lg mb-8">يرجى ملء النموذج التالي للتسجيل في برنامج نور البيان</p>
         
-        <div class="form-container max-w-2xl mx-auto">
-          <form class="registration-form space-y-6" data-form-type="registration">
-            <div class="form-row grid md-grid-cols-2 gap-6">
+        <div class="max-w-2xl mx-auto bg-shatby-gold/5 backdrop-blur-sm rounded-xl p-8 border border-shatby-gold">
+          <form class="space-y-6" data-form-type="registration">
+            <div class="grid md-grid-cols-2 gap-6">
               <div class="form-group">
-                <label for="fullName" class="form-label">الاسم الكامل</label>
+                <label for="fullName">الاسم الكامل</label>
                 <input 
                   type="text" 
                   id="fullName"
@@ -201,7 +197,7 @@
                 >
               </div>
               <div class="form-group">
-                <label for="age" class="form-label">العمر</label>
+                <label for="age">العمر</label>
                 <input 
                   type="number" 
                   id="age"
@@ -213,20 +209,21 @@
               </div>
             </div>
             
-            <div class="form-row grid md-grid-cols-2 gap-6">
+            <div class="grid md-grid-cols-2 gap-6">
               <div class="form-group">
-                <label for="phone" class="form-label">رقم الهاتف</label>
+                <label for="phone">رقم الهاتف</label>
                 <input 
-                  type="tel" 
+                  type="tel" dir="rtl"
                   id="phone"
                   name="phone"
-                  class="form-input" 
+                  class="form-input text-right" 
+                  dir="ltr"
                   placeholder="أدخل رقم الهاتف" 
                   required
                 >
               </div>
               <div class="form-group">
-                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <label for="email">البريد الإلكتروني</label>
                 <input 
                   type="email" 
                   id="email"
@@ -238,42 +235,42 @@
               </div>
             </div>
             
-            <div class="form-row grid md-grid-cols-2 gap-6">
-              <div class="form-group">
-                <label for="level-select" class="form-label">المستوى المطلوب</label>
-                <select 
-                  id="level-select"
-                  name="level"
-                  class="form-select" 
-                  required
-                >
-                  <option value="">اختر المستوى</option>
-                  <option value="مستوى الحركات ">المستوى الأول: الحركات</option>
-                  <option value="السكون">المستوى الثاني: السكون</option>
-                  <option value="المدود">المستوى الثالث: المدود</option>
-                  <option value="التنوين">المستوى الرابع: التنوين</option>
-                  <option value="الشدادت">المستوى الخامس: الشدّات</option>
-                  <option value="التجويد">المستوى السادس: التجويد</option>
-                </select>
-              </div>
-              
-              <div class="form-group">
-                <label for="studyType" class="form-label">نوع الدراسة</label>
-                <select 
-                  id="studyType"
-                  name="studyType"
-                  class="form-select"
-                  required
-                >
-                  <option value="">اختر نوع الدراسة</option>
-                  <option value="مباشر ">حضوري (في المركز)</option>
-                  <option value="أونلاين">عن بعد (أونلاين)</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label for="level-select">المستوى المطلوب</label>
+              <select 
+                id="level-select"
+                name="level"
+                class="form-input bg-transparent text-white"
+                required
+                style="background-color: #1A493D; option { background-color: #62745e; }"
+              >
+                <option value="" style="background-color: #1A493D;">اختر المستوى</option>
+                <option value="مستوى الحركات" style="background-color: #1A493D;">المستوى الأول: الحركات</option>
+                <option value="السكون" style="background-color: #1A493D;">المستوى الثاني: السكون</option>
+                <option value="المدود" style="background-color: #1A493D;">المستوى الثالث: المدود</option>
+                <option value="التنوين" style="background-color: #1A493D;">المستوى الرابع: التنوين</option>
+                <option value="الشدادت" style="background-color: #1A493D;">المستوى الخامس: الشدّات</option>
+                <option value="التجويد" style="background-color: #1A493D;">المستوى السادس: التجويد</option>
+              </select>
             </div>
             
             <div class="form-group">
-              <label for="notes" class="form-label">ملاحظات إضافية</label>
+              <label for="studyType">نوع الدراسة</label>
+              <select 
+                id="studyType"
+                name="studyType"
+                class="form-input bg-transparent text-white"
+                required
+                style="background-color: #1A493D; option { background-color: #62745e; }"
+              >
+                <option value="" style="background-color: #1A493D;">اختر نوع الدراسة</option>
+                <option value="مباشر" style="background-color: #1A493D;">حضوري (في المركز)</option>
+                <option value="أونلاين" style="background-color: #1A493D;">عن بعد (أونلاين)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="notes">ملاحظات إضافية</label>
               <textarea 
                 id="notes"
                 name="notes"
@@ -282,8 +279,11 @@
               ></textarea>
             </div>
             
-            <div class="form-group">
-              <button type="submit" class="submit-button">
+            <div>
+              <button 
+                type="submit" 
+                class="button-primary w-full"
+              >
                 إرسال الطلب
               </button>
             </div>
