@@ -112,55 +112,30 @@
             <div class="feature-item-dot"></div>
             <span>متابعة الغياب مع ولي الأمر حتى لا يقل المستوى</span>
           </li>
+          
+          <li class="feature-item">
+            <div class="feature-item-dot"></div>
+            <span>   مرونة في الوقت لمدةتصل إلى أربع ساعات على أن يكون أقل مدة للطالب 90دقيقة</span>
+          </li>
+
         </ul>
       </div>
     </section>
-    
-    <!-- جدول الحلقات -->
-    <section class="section relative bg-shatby-green-70">
-      <div class="container relative z-10">
-        <h2 class="heading-secondary text-center">جدول حلقات التحفيظ</h2>
-        <div class="overflow-x-auto mt-8">
-          <table class="w-full border-collapse">
-            <thead>
-              <tr class="bg-shatby-gold text-black">
-                <th class="border border-shatby-gold-30 px-4 py-3">الفترة</th>
-                <th class="border border-shatby-gold-30 px-4 py-3">الأيام</th>
-                <th class="border border-shatby-gold-30 px-4 py-3">الفئة</th>
-                <th class="border border-shatby-gold-30 px-4 py-3">الوقت</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-shatby-gold-30 px-4 py-3 text-center">الصباحية</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">السبت -الأربعاء</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">البنين (6-15 سنة)</td>
-                <td class="border border-shatby-gold-30 px-4 py-3" dir="ltr">8:00 - 10:00</td>
-              </tr>
-              <tr class="bg-shatby-green-50">
-                <td class="border border-shatby-gold-30 px-4 py-3 text-center">الصباحية</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">السبت - الأربعاء</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">البنات (6-15 سنة)</td>
-                <td class="border border-shatby-gold-30 px-4 py-3" dir="ltr">10:30 - 12:30</td>
-              </tr>
-              <tr>
-                <td class="border border-shatby-gold-30 px-4 py-3 text-center">المسائية</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">السبت - الخميس</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">البنين (16+ سنة)</td>
-                <td class="border border-shatby-gold-30 px-4 py-3" dir="ltr">16:00 - 18:00</td>
-              </tr>
-              <tr class="bg-shatby-green-50">
-                <td class="border border-shatby-gold-30 px-4 py-3 text-center">المسائية</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">السبت - الخميس</td>
-                <td class="border border-shatby-gold-30 px-4 py-3">البنات (16+ سنة)</td>
-                <td class="border border-shatby-gold-30 px-4 py-3" dir="ltr">18:30 - 20:30</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
-      </div>
-    </section>
-    
+        <!-- قسم الفديو التعريفي  -->
+          <div class="course-card">
+            <div class="course-video">
+              <iframe class="rounded-xl w-full aspect-video" 
+                      src="https://www.youtube.com/embed/JVToAoPNTVs?list=PLUkPq61Jnakku3DJD4on5dv6eEPo4j0nu"
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+    <!-- تفاصيل البرنامج -->
+
+
+    <!-- جدول الحلقات -->
     <!-- نموذج التسجيل -->
     <section id="apply-form" class="section relative">
       <div class="star-background opacity-30"></div>
@@ -181,19 +156,7 @@
                   placeholder="أدخل الاسم الكامل" 
                   required
                 >
-              </div>
-              <div class="form-group">
-                <label for="age">العمر</label>
-                <input 
-                  type="number" 
-                  id="age"
-                  name="age"
-                  class="form-input" 
-                  placeholder="أدخل العمر" 
-                  required
-                >
-              </div>
-            </div>
+         
             
             <div class="grid md-grid-cols-2 gap-6">
               <div class="form-group">
@@ -231,9 +194,12 @@
                 style="background-color: #1A493D; option { background-color: #62745e; }"
               >
                 <option value="" style="background-color: #1A493D;">اختر الفترة</option>
-                <option value="morning" style="background-color: #1A493D;">الفترة الصباحية</option>
-                <option value="evening" style="background-color: #1A493D;">الفترة المسائية</option>
+                <option value="morning" style="background-color: #1A493D;">الفترة الأولى :من 2: 4 عصرا </option>
+                <option value="evening" style="background-color: #1A493D;">الفترة الثانية : من 4: إلى 6 مساء</option>
+                <option value="evening" style="background-color: #1A493D;">الفترة الثالثة : من6: إلى8 مساء</option>
+
               </select>
+
             </div>
             
             <div>
