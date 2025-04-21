@@ -156,33 +156,31 @@
                   placeholder="أدخل الاسم الكامل" 
                   required
                 >
-         
-            
-            <div class="grid md-grid-cols-2 gap-6">
-              <div class="form-group">
-                <label for="phone">رقم الهاتف</label>
-                <input 
-                  type="tel" 
-                  id="phone"
-                  name="phone"
-                  class="form-input" 
-                  dir="rtl"
-                  placeholder="أدخل رقم الهاتف" 
-                  required
-                >
               </div>
               <div class="form-group">
-                <label for="email">البريد الإلكتروني</label>
+                <label for="age">العمر</label>
                 <input 
-                  type="email" 
-                  id="email"
-                  name="email"
+                  type="number" 
+                  id="age"
+                  name="age"
                   class="form-input" 
-                  placeholder="أدخل البريد الإلكتروني" 
+                  placeholder="أدخل العمر" 
                   required
                 >
               </div>
             </div>
+            <div class="form-group">
+              <label for="phone">رقم الهاتف</label>
+              <input 
+                type="tel" 
+                id="phone"
+                name="phone"
+                class="form-input" 
+                dir="rtl"
+                placeholder="أدخل رقم الهاتف" 
+                required
+              >
+              
             
             <div class="form-group">
               <label for="period">الفترة المناسبة</label>
@@ -194,9 +192,9 @@
                 style="background-color: #1A493D; option { background-color: #62745e; }"
               >
                 <option value="" style="background-color: #1A493D;">اختر الفترة</option>
-                <option value="morning" style="background-color: #1A493D;">الفترة الأولى :من 2: 4 عصرا </option>
-                <option value="evening" style="background-color: #1A493D;">الفترة الثانية : من 4: إلى 6 مساء</option>
-                <option value="evening" style="background-color: #1A493D;">الفترة الثالثة : من6: إلى8 مساء</option>
+                <option value="2:4" style="background-color: #1A493D;">الفترة الأولى :من 2: 4 عصرا </option>
+                <option value="4:6" style="background-color: #1A493D;">الفترة الثانية : من 4: إلى 6 مساء</option>
+                <option value="6:8" style="background-color: #1A493D;">الفترة الثالثة : من6: إلى8 مساء</option>
 
               </select>
 
@@ -220,6 +218,11 @@
       form.addEventListener('submit', e => {
         e.preventDefault();
         
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.innerHTML = 'جاري الإرسال...';
+        submitButton.disabled = true;
+        
         const formData = new FormData(form);
         const data = {
           fullName: formData.get('fullName'),
@@ -230,7 +233,6 @@
           currentLevel: formData.get('currentLevel')
         };
 
-        // رابط تطبيق Google Apps Script
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxCIxI3QZ0pqb-jrVLHnQrPs6tTKDC8_aO67-Cz7URyU-1wqsEi34YmRxhlG4ciPm6bbw/exec';
         fetch(scriptURL, {
           method: 'POST',
@@ -243,10 +245,14 @@
         .then(() => {
           alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
           form.reset();
+          submitButton.innerHTML = originalButtonText;
+          submitButton.disabled = false;
         })
         .catch(error => {
           console.error('Error:', error);
           alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى');
+          submitButton.innerHTML = originalButtonText;
+          submitButton.disabled = false;
         });
       });
     </script>
